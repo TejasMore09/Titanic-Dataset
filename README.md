@@ -1,1 +1,7 @@
 # Titanic-Dataset
+# Data Cleaning and Preprocessing
+This task focuses on preparing raw data for machine learning by performing essential data cleaning and preprocessing steps. The dataset used for this task is the Titanic Survival dataset, which includes passenger details like age, gender, ticket class, and whether or not they survived. The objective is to handle missing values, encode categorical variables, scale numerical features, and detect and remove outliers to make the dataset ready for modelling.
+I started by exploring the dataset using basic Pandas functions like .info() to understand the structure and identify missing values. The Age column, which had several missing values, was imputed using the median, while Embarked was filled using the most frequent value so 
+I used mode. For the Cabin column, which had too many missing entries, I replaced the nulls with a placeholder value 'A', representing unknown.
+To handle categorical variables, I used One-Hot Encoding to convert columns like Sex and Embarked into numerical values. Then I specifically used the pd.get_dummies() function with the drop_first=True parameter to avoid the dummy variable trap. For numerical features like Age and Fare, applied standardisation to ensure they are on the same scale.
+Then I visualised outliers using boxplots and identified extreme values. Where necessary, applied techniques like the Interquartile Range method to remove these outliers to reduce skewness and improve data quality. The final output is a cleaned and preprocessed dataset.
